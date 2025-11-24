@@ -43,7 +43,7 @@ dependencies {
 	// Attack: Remote Code Execution via unsafe YAML deserialization
 	// Real Impact: Used in Jenkins, Ansible, K8s - compromises entire build pipeline
 	// Dependabot will detect and suggest upgrade to 2.0+
-	implementation 'org.yaml:snakeyaml:1.30'
+	implementation 'org.yaml:snakeyaml:2.5'
 }
 
 tasks.named('test') {
