@@ -36,7 +36,7 @@ dependencies {
 	// Attack: RCE via malicious HTTP requests exploiting Spring's data binding
 	// Real Impact: 60% of Java applications vulnerable, exploited within 48 hours
 	// Dependabot will detect and auto-create PR to upgrade to 5.3.18+
-	implementation 'org.springframework:spring-beans:5.3.16'
+	implementation 'org.springframework:spring-beans:7.0.1'
 	
 	// 3. SnakeYAML Deserialization - CI/CD Supply Chain Attack (CVE-2022-1471)
 	// Severity: CRITICAL | CVSS 9.8
