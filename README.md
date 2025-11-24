@@ -47,3 +47,5 @@ GitHub Secret Scanning identifies exposed secrets in the **[`application.propert
 ---
 
 🔹 _Created for demonstration purposes._ 🚀
+
+<!-- Triggering secret and dependency scans -->
