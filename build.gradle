@@ -22,10 +22,21 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-	// Vulnerable dependencies
-    implementation 'io.netty:netty-common:4.1.117.Final' // https://github.com/advisories/GHSA-389x-839f-4rhx
-    implementation 'com.amazon.redshift:redshift-jdbc42:2.1.0.31'// https://github.com/advisories/GHSA-8596-2jgr-ppj7 
-    implementation 'org.apache.nifi:nifi-framework-core:1.16.0'  // https://github.com/advisories/GHSA-v3vc-6qcv-4vrx 
+	// ===== TOP 2 CRITICAL SUPPLY CHAIN VULNERABILITIES =====
+	
+	// 1. Log4Shell - The $10 Billion Vulnerability (CVE-2021-44228)
+	// Severity: CRITICAL | CVSS 10.0
+	// Attack: Remote Code Execution via JNDI lookup in log messages
+	// Real Impact: 93% of enterprise clouds affected, ransomware campaigns
+	// Dependabot will detect and auto-create PR to upgrade to 2.17.1+
+	implementation 'org.apache.logging.log4j:log4j-core:2.14.0'
+	
+	// 2. Spring4Shell - Framework RCE (CVE-2022-22965)
+	// Severity: CRITICAL | CVSS 9.8
+	// Attack: RCE via malicious HTTP requests exploiting Spring's data binding
+	// Real Impact: 60% of Java applications vulnerable, exploited within 48 hours
+	// Dependabot will detect and auto-create PR to upgrade to 5.3.18+
+	implementation 'org.springframework:spring-beans:5.3.16'
 }
 
 tasks.named('test') {
